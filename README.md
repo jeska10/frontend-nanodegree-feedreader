@@ -6,7 +6,7 @@ to ensure that the application is functioning correctly.  Jasmine provides statu
 
 
 ##Steps to Run the Application
-1. Clone the git repository http://github.com/udacity/frontend-nanodegree-feedreader).
+1. Clone the git repository http://github.com/jeska10/frontend-nanodegree-feedreader).
 2. Navigate to index.html
 3. Right click index.html and select open in and select a browser to open the file
 4. Scroll to the bottom of the page to view the Jasmine status information.
