@@ -1,0 +1,3 @@
+https://discussions.udacity.com/c/nd001-project-6-feed-reader-testing
+http://jasmine.github.io/2.4/introduction.html
+https://www.udacity.com/course/ud549
