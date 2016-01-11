@@ -32,7 +32,6 @@ $(function() {
         it('url is defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
-                expect(feed.url).not.toBeNull();
                 expect(feed.url.trim()).not.toEqual('');
             });
          });
@@ -44,7 +43,6 @@ $(function() {
         it('name is defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
-                expect(feed.name).not.toBeNull();
                 expect(feed.name.trim()).not.toEqual('');
             });
          });
@@ -95,14 +93,11 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done) {
-            loadFeed(0,function() {
-                done();
-            });
+            loadFeed(0,done);
         });
 
-        it('feed container is not empty', function(done) {
+        it('feed container is not empty', function() {
             expect($('.entry').length).toBeGreaterThan(0);
-            done();
         });
     });
 
@@ -113,20 +108,20 @@ $(function() {
         /* Test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
-        var headerTitle;
+        var feedHtml;
 
         beforeEach(function(done) {
             loadFeed(1,function() {
-                headerTitle = $('.header-title').html();
+                feedHtml = $('.feed').html();
                 done();
             });
         });
 
         it('feed content changes', function(done) {
             loadFeed(0, function() {
-                expect($('.header-title').html()).not.toEqual(headerTitle);
+                expect($('.feed').html()).not.toEqual(feedHtml);
                 done();
-            });            
+            });
         });
     });
 });
